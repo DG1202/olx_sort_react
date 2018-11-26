@@ -10,7 +10,7 @@ class SearchBar extends React.Component{
         fetch("/api?uri= " + this.searchValue +
             "&pages=" +  this.pagesValue)
             .then(res => res.json())
-            .then(this.props.afterResponeState)
+            .then((res) => {this.props.afterResponseState(res)})
     }
     render(){
         return(
