@@ -6,9 +6,9 @@ class SearchBar extends React.Component{
     }
     handleSearchValueChange = (e) =>{this.setState({searchValue: e.target.value})}
     handlePagesValueChange = (e) =>{this.setState({pagesValue: e.target.value})}
-    onSubmit = (e) =>{
-        fetch("/api?uri= " + this.searchValue +
-            "&pages=" +  this.pagesValue)
+    onSubmit = () =>{
+        fetch("/api?uri= " + this.state.searchValue +
+            "&pages=" +  this.state.pagesValue)
             .then(res => res.json())
             .then((res) => {this.props.afterResponseState(res)})
     }
@@ -19,17 +19,17 @@ class SearchBar extends React.Component{
                 <input type = 'text'
                        id = 'search-inp'
                        placeholder = 'Знайти на OLX'
-                       value = {this.searchValue}
+                       //value = {this.state.searchValue}
                        onChange = {this.handleSearchValueChange}
                 />
                 <input type = 'number'
                        id = 'pages-inp'
                        placeholder = 'Кількість сторінок'
-                       value = {this.pagesValue}
+                       //value = {this.state.pagesValue}
                        onChange = {this.handlePagesValueChange}/>
-                <input type ='submit'
+                <input type ='button'
                        value = "ПОШУК"
-                       onClick = {this.oSubmit}/>
+                       onClick = {this.onSubmit}/>
             </form>
         );
     }
