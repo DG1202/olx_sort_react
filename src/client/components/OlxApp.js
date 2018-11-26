@@ -9,10 +9,11 @@ class OlxApp extends React.Component{
     }
     afterResponeState = (responseArray) =>{this.setState({responseArray:responseArray})}
     render(){
+
         return(
             <div>
                 <SearchBar/>
-                <Table items = {this.responseArray}/>
+                <Table items = {this.state.responseArray}/>
             </div>
         );
     }

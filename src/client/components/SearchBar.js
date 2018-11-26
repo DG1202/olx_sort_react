@@ -13,6 +13,7 @@ class SearchBar extends React.Component{
             .then((res) => {this.props.afterResponseState(res)})
     }
     render(){
+
         return(
             <form>
                 <input type = 'text'

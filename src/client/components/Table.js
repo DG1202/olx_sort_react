@@ -14,12 +14,12 @@ class Table extends React.Component{
                     <th>Перегляди</th>
                 </tr>
                 </thead>
-                <tbody>{this.items.map((item,index)=>(
-                    <TableRow  index = {index}
-                               item = {item}
-                               key = {item.name}
+                <tbody>{items.map((item,index)=> {
+                    <TableRow index={index}
+                              item={item}
+                              key={item.name}
                     />
-                 ))
+                })
                 }</tbody>
             </table>
         );
